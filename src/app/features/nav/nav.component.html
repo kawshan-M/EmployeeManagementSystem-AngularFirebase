@@ -1,0 +1,115 @@
+<div class="card">
+  <p-toolbar >
+      <div class="p-toolbar-group-start" style="display: flex;">
+        <div class="card flex justify-content-center" >
+          <p-sidebar [(visible)]="sidebarVisible" class="customsidebar">
+              <div class="sidebar">
+                <p-button label="Winnipeg EMS"  ></p-button>
+                <p-button class="back" icon="pi pi-times" (click)="toggleSidebar()" styleClass="p-button-rounded p-button-help p-button-outlined" (click)="sidebarVisible = false"></p-button>
+                <p-button label="Dashboard" icon="pi pi-building" ></p-button>
+                <p-button label="Manage Employees" icon="pi pi-users"></p-button>
+                <p-button label="Dashboard" icon="pi pi-building" ></p-button>
+                <p-button label="Manage Employees" icon="pi pi-users"></p-button>
+                <p-button label="My Profile" icon="pi pi-verified"></p-button>
+              </div>
+          </p-sidebar>
+          <p-button icon="pi pi-bars" (click)="toggleSidebar()" styleClass="p-button-rounded p-button-help p-button-outlined" (click)="sidebarVisible = true"></p-button>
+        </div>      
+        <span style="font-weight: bold; font-size: 30px; margin-left: 20px; margin-top: 10px;">{{ 'welcome_message' | translate }}</span>
+      </div>
+      <div class="p-toolbar-group-end">
+          <p-button (click)="showDialog()" styleClass="p-button-help" [label]="'navbar.add_employee' | translate"></p-button>
+          <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage" optionLabel="label"  >
+            <ng-template let-option pTemplate="item">
+              <div (click)="switchLanguage(option.value)">
+                {{ option.label }}
+              </div>
+            </ng-template>
+          </p-dropdown>
+      </div>
+  </p-toolbar>
+
+
+  <p-dialog [header]="'form_heading' | translate" [(visible)]="visible" [style]="{width: '38vw'}">
+
+    <h2>{{ 'form_message' | translate }}</h2>
+
+    <form>
+      <div class="row">
+        <div class="card flex justify-content-center">
+          <span class="p-float-label">
+            <input pInputText id="Fristname" name="fristname" placeholder="Maleesha" [(ngModel)]="employeeData.firstName" />
+            <label htmlFor="Fristname">{{ 'table_headers.first_name' | translate }}</label>
+          </span>
+        </div>
+        <div class="card flex justify-content-center">
+          <span class="p-float-label">
+            <input pInputText id="lasstname" name="lastname" placeholder="Mendis" [(ngModel)]="employeeData.lastName" />
+            <label htmlFor="lastname">{{ 'table_headers.last_name' | translate }}</label>
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="card flex justify-content-center">
+          <span class="p-float-label">
+            <input pInputText id="Email" name="email" placeholder="abc@gmail.com" [(ngModel)]="employeeData.email" />
+            <label htmlFor="Email">{{ 'table_headers.email' | translate }}</label>
+          </span>
+        </div>
+        <div class="card flex justify-content-center">
+          <span class="p-float-label">
+              <p-inputNumber inputId="integeronly" name="contactNo" [(ngModel)]="employeeData.contactNo"> </p-inputNumber>
+              <label htmlFor="number-input">{{ 'table_headers.contact_no' | translate }}</label>
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="card flex justify-content-center">
+          <span class="p-float-label">
+              <p-inputNumber inputId="integeronly" name="experience" [(ngModel)]="employeeData.experience"> </p-inputNumber>
+              <label htmlFor="number-input">{{ 'table_headers.experience' | translate }}</label>
+          </span>
+        </div>
+        <div class="card flex justify-content-center">
+          <div class="flex flex-wrap gap-3">
+              <div class="flex align-items-center">
+                  <p-radioButton name="pizza" value="male" [(ngModel)]="employeeData.gender" inputId="ingredient1"></p-radioButton>
+                  <label for="male" class="ml-2">Male</label>
+              </div>
+              
+              <div class="flex align-items-center">
+                  <p-radioButton name="pizza" value="female" [(ngModel)]="employeeData.gender" inputId="ingredient2"></p-radioButton>
+                  <label for="female" class="ml-2">Female</label>
+              </div>
+              
+              <div class="flex align-items-center">
+                  <p-radioButton name="pizza" value="other" [(ngModel)]="employeeData.gender" inputId="ingredient3"></p-radioButton>
+                  <label for="other" class="ml-2">Other</label>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p-calendar  placeholder="Date of Birth" name="dateOfBirth" [(ngModel)]="employeeData.dateOfBirth" ></p-calendar>  
+        
+      </div>
+
+      <div class="row">
+        <div class="card flex justify-content-center">
+          <span class="p-float-label">
+              <p-inputNumber inputId="integeronly" name="salary" [(ngModel)]="employeeData.salary" > </p-inputNumber>
+              <label htmlFor="number-input">{{ 'table_headers.salary' | translate }}</label>
+          </span>
+        </div>
+      </div>
+    </form>
+    
+    <ng-template pTemplate="footer">
+      <p-button  (click)="visible = false" label="Cancel" styleClass="p-button-text"></p-button>
+      <p-toast></p-toast>
+      <p-button label="Save" styleClass="p-button-raised p-button-text p-button-help" (click)="saveEmployee()"></p-button>
+    </ng-template>
+  </p-dialog>
+</div>

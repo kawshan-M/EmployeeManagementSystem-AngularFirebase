@@ -1,0 +1,16 @@
+<p-toolbar style="width: 100px;">
+  <div class="p-toolbar-group-start" style="display: flex;">
+    <div class="card flex justify-content-center" >
+      <p-sidebar [(visible)]="sidebarVisible" class="customsidebar">
+          <div class="sidebar">
+            <p-button label="Dashboard" icon="pi pi-building" ></p-button>
+            <p-button label="Manage Employees" icon="pi pi-users"></p-button>
+            <p-button label="Dashboard" icon="pi pi-building" ></p-button>
+            <p-button label="Manage Employees" icon="pi pi-users"></p-button>
+            <p-button label="My Profile" icon="pi pi-verified"></p-button>
+          </div>
+      </p-sidebar>
+      <p-button icon="pi pi-bars" styleClass="p-button-rounded p-button-help p-button-outlined" (click)="sidebarVisible = true"></p-button>
+    </div>      
+    </div>
+</p-toolbar>

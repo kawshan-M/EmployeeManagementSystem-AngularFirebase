@@ -1,0 +1,22 @@
+{
+    "navbar": {
+      "english": "ඉංග්‍රීසි",
+      "sinhala": "සිංහල",
+      "add_employee": "නව සේවකයෙක්"
+    },
+    "welcome_message": "සේවක කළමනාකරණ පද්ධතියට සාදරයෙන් පිළිගනිමු",
+    "table_headers": {
+      "first_name": "මුල් නම",
+      "last_name": "අවසන් නම",
+      "email": "ඊමේල්",
+      "contact_no": "දුරකථන අංකය",
+      "dob": "උපන්දිනය",
+      "sex": "ස්ත්‍රී/පුරුෂ",
+      "experience": "අත්දැකීම",
+      "salary": "වැටුප",
+      "edit": "සංස්කරණය",
+      "delete": "මකාදමන්න"
+    },
+    "form_message" : "නව සේවක පුද්ගලික තොරතුරු",
+    "form_heading" : "නව සේවකයෙකු එකතු කිරීම"
+  }

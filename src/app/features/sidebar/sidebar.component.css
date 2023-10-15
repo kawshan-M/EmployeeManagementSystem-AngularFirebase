@@ -1,0 +1,35 @@
+::ng-deep .p-sidebar {
+    background: #25b5bd !important;
+  }
+  
+  ::ng-deep .p-sidebar-left {
+    width: 18rem !important;
+  }
+  
+  .sidebar ::ng-deep .p-button {
+    background: #25b5bd !important;
+    border: 0.5px solid #25b5bd !important;
+    padding: 1.25rem 1rem !important;
+    margin-top: 5px !important;
+    border-radius: 0px!important;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  p-button {
+    margin-right: 10px;
+}
+
+.form{
+  margin-top: 30px;
+}
+
+.row{
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+
+  
+}

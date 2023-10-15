@@ -1,0 +1,23 @@
+{
+    "navbar": {
+      "english": "English",
+      "sinhala": "Sinhala",
+      "add_employee": "add employee"
+    },
+    "welcome_message": "Welcome to the Employee Management System",
+    "table_headers": {
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "email",
+      "contact_no": "Contact-No",
+      "dob": "Dob",
+      "sex": "Sex",
+      "experience": "experience",
+      "salary": "sallary",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "form_message" : "New employee personal information goes",
+    "form_heading" : "Add New Employee"
+
+  }

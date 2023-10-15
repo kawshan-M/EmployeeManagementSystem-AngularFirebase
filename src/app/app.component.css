@@ -1,0 +1,29 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  table {
+    width: 100%;
+  }
+  
+  
+  
+  td, th {
+    width: 25%;
+  }
+
+  .content {
+    padding: 32px;
+}
+
+.app-with-sidebar {
+  margin-left: 200px;
+}
+
+.add-margin{
+  margin-left: 250px;
+}
+
+.no-margin{
+  margin-left: 0;
+}

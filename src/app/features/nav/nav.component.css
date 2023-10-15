@@ -1,0 +1,48 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  p-button {
+    margin-right: 10px;
+}
+
+.form{
+  margin-top: 30px;
+}
+
+.row{
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+
+  
+}
+::ng-deep .p-sidebar {
+  background: #25b5bd !important;
+}
+
+::ng-deep .p-sidebar-left {
+  width: 16rem !important;
+  margin-top: 90px !important;
+}
+
+.sidebar ::ng-deep .p-button {
+  background: #25b5bd !important;
+  border: 0.5px solid #25b5bd !important;
+  padding: 1.25rem 1rem !important;
+  margin-top: 5px !important;
+  border-radius: 0px!important;
+}
+
+::ng-deep .p-component-overlay {
+  display: none !important;
+}
+
+::ng-deep .p-sidebar .p-sidebar-header {
+  padding: -6.5rem !important;
+}
+
+::ng-deep .p-sidebar-header {
+  display: none !important;
+  
+}

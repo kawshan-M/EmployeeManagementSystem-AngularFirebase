@@ -1,0 +1,117 @@
+<div class="card">
+  <p-table [value]="dataList" [tableStyle]="{ 'min-width': '85rem' }">
+      <ng-template pTemplate="header">
+          <tr>
+            <th>{{ 'table_headers.first_name' | translate }}</th>
+            <th>{{ 'table_headers.last_name' | translate }}</th>
+            <th>{{ 'table_headers.email' | translate }}</th>
+            <th>{{ 'table_headers.contact_no' | translate }}</th>
+            <th>{{ 'table_headers.dob' | translate }}</th>
+            <th>{{ 'table_headers.sex' | translate }}</th>
+            <th>{{ 'table_headers.experience' | translate }}</th>
+            <th>{{ 'table_headers.salary' | translate }}</th>
+            <th>{{ 'table_headers.edit' | translate }}</th>
+            <th>{{ 'table_headers.delete' | translate }}</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+          <tr>
+              <td>{{ product.firstName }}</td>
+              <td>{{ product.lastName }}</td>
+              <td>{{ product.email }}</td>
+              <td>{{ product.contactNo }}</td>
+              <td>{{ product.dateOfBirth | date:'shortDate'}}</td>
+              <td>{{ product.gender }}</td>
+              <td>{{ product.experience }}</td>
+              <td>{{ product.salary }}</td>
+              <td>
+                <p-toast></p-toast>
+                <p-button (click)="editEmployee(product,product.id)" icon="pi pi-user-edit" styleClass="p-button-rounded p-button-help p-button-outlined"></p-button>
+              </td>
+              <td>
+                <p-toast></p-toast>
+                <p-button (click)="deleteEmployee(product.id)" icon="pi pi-times" styleClass="p-button-rounded p-button-danger p-button-outlined"></p-button>
+              </td>
+          </tr>
+      </ng-template>
+  </p-table>
+</div>
+
+<p-dialog header="Edit Employee" [(visible)]="visible" [style]="{ width: '38vw' }">
+
+  <form>
+    <div class="row">
+      <div class="card flex justify-content-center">
+        <span class="p-float-label">
+          <input pInputText id="editFirstName" name="editFirstName" [(ngModel)]="selectedEmployee.firstName" />
+          <label htmlFor="editFirstName">First Name</label>
+        </span>
+      </div>
+      <div class="card flex justify-content-center">
+        <span class="p-float-label">
+          <input pInputText id="editLastName" name="editLastName" [(ngModel)]="selectedEmployee.lastName" />
+          <label htmlFor="editLastName">Last Name</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card flex justify-content-center">
+        <span class="p-float-label">
+          <input pInputText id="editEmail" name="editEmail" [(ngModel)]="selectedEmployee.email" />
+          <label htmlFor="editEmail">Email</label>
+        </span>
+      </div>
+      <div class="card flex justify-content-center">
+        <span class="p-float-label">
+          <p-inputNumber inputId="editContactNo" name="editContactNo" [(ngModel)]="selectedEmployee.contactNo"> </p-inputNumber>
+          <label htmlFor="editContactNo">Contact No</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card flex justify-content-center">
+        <span class="p-float-label">
+          <p-inputNumber inputId="editExperience" name="editExperience" [(ngModel)]="selectedEmployee.experience"> </p-inputNumber>
+          <label htmlFor="editExperience">Experience</label>
+        </span>
+      </div>
+      <div class="card flex justify-content-center">
+        <div class="flex flex-wrap gap-3">
+          <div class="flex align-items-center">
+            <p-radioButton name="editGender" value="male" [(ngModel)]="selectedEmployee.gender" inputId="editIngredient1"></p-radioButton>
+            <label for="editMale" class="ml-2">Male</label>
+          </div>
+          <div class="flex align-items-center">
+            <p-radioButton name="editGender" value="female" [(ngModel)]="selectedEmployee.gender" inputId="editIngredient2"></p-radioButton>
+            <label for="editFemale" class="ml-2">Female</label>
+          </div>
+          <div class="flex align-items-center">
+            <p-radioButton name="editGender" value="other" [(ngModel)]="selectedEmployee.gender" inputId="editIngredient3"></p-radioButton>
+            <label for="editOther" class="ml-2">Other</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <p-calendar placeholder="Date of Birth" name="editDateOfBirth" [(ngModel)]="selectedEmployee.dateOfBirth"></p-calendar>
+    </div>
+
+    <div class="row">
+      <div class="card flex justify-content-center">
+        <span class="p-float-label">
+          <p-inputNumber inputId="editSalary" name="editSalary" [(ngModel)]="selectedEmployee.salary"> </p-inputNumber>
+          <label htmlFor="editSalary">Salary</label>
+        </span>
+      </div>
+    </div>
+  </form>
+
+  <ng-template pTemplate="footer">
+    <p-button (click)="visible = false" label="Cancel" styleClass="p-button-text"></p-button>
+    <p-toast></p-toast>
+    <p-button label="Save" styleClass="p-button-raised p-button-text p-button-help" (click)="updateEmployee()" ></p-button>
+  </ng-template>
+</p-dialog>
+

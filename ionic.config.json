@@ -1,0 +1,12 @@
+{
+  "defaultProject": "employee-management-system",
+  "projects": {
+    "employee-management-system": {
+      "name": "employee-management-system",
+      "integrations": {
+        "capacitor": {}
+      },
+      "type": "angular"
+    }
+  }
+}

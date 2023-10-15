@@ -1,0 +1,33 @@
+<div class="fullscreen-bg">
+  <img src="./assets/img1.jpg" alt="Background Image">
+  <div class="overlay-text">
+    <p>Welcome to EMS</p>
+  </div>
+  <div class="overlay-form">
+    <p-card header="Let's get started" [style]="{ width: '360px' }">
+      <div class="col-5 flex align-items-center justify-content-center">
+        <div class="p-fluid">
+            <div class="field">
+                <label for="email">Email</label>
+                <input pInputText id="email" type="text" [(ngModel)]="email" />
+            </div>
+            <div class="field">
+                <label for="password">Password</label>
+                <input pInputText id="password" type="password" [(ngModel)]="password" />
+            </div>
+            <div class="field">
+              <p-button (click)="login()" label="Login"></p-button>
+            </div>
+            <p-divider></p-divider>
+            <div class="field">
+              <p-button *ngIf="!isLoggedIn" (click)="authService.GoogleAuth()" label="Sign up with Google" styleClass="p-button-outlined" >
+                <img alt="logo" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" style="width: 1.5rem" />
+              </p-button>
+              <p *ngIf="uid">User UID: {{ uid }}</p>
+            </div>
+        </div>
+    </div>
+  </p-card>
+  </div>
+</div>
+
